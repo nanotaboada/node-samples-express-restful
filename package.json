@@ -1,0 +1,41 @@
+{
+  "name": "node-samples-express-restful",
+  "version": "1.0.0",
+  "description": "Proof of Concept for a REST API made with Node.js and Express 4",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanotaboada/node-samples-express-restful.git"
+  },
+  "author": "Nano Taboada <nanotaboada@msn.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanotaboada/node-samples-express-restful/issues"
+  },
+  "homepage": "https://github.com/nanotaboada/node-samples-express-restful#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2600",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+  }
+}
