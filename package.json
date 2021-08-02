@@ -1,6 +1,7 @@
 {
+  "type": "module",
   "name": "node-samples-express-restful",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Proof of Concept for a REST API made with Node.js and Express 4",
   "main": "index.js",
   "scripts": {
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/nanotaboada/node-samples-express-restful#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "lowdb": "^2.1.0",
     "nodemon": "^2.0.12",
     "winston": "^3.3.3"
   },
