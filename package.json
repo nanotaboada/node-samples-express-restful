@@ -3,11 +3,11 @@
   "name": "node-samples-express-restful",
   "version": "1.1.0",
   "description": "Proof of Concept for a REST API made with Node.js and Express 4",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "lint": "eslint .",
-    "start": "nodemon app.js",
-    "test": "echo \"This script has not yet been implemented.\""
+    "start": "nodemon server.js",
+    "test": "mocha 'tests/songsTests.js'"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,12 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4"
+    "eslint-plugin-import": "^2.23.4",
+    "mocha": "^9.0.3",
+    "supertest": "^6.1.4"
   },
   "nodemonConfig": {
     "restartable": "rs",
