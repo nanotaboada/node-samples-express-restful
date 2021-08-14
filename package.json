@@ -6,7 +6,8 @@
   "main": "server.js",
   "scripts": {
     "lint": "eslint .",
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "debug": "nodemon --inspect server.js",
     "test": "mocha 'tests/songsTests.js'"
   },
   "repository": {
