@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 
 import winston from 'winston';
-import app from './app.js';
+import app from './app.mjs';
 
 /* -----------------------------------------------------------------------------
   Logging

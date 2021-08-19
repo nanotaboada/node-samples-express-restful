@@ -1,7 +1,5 @@
-/* eslint-disable import/extensions */
-
 import express from 'express';
-import routes from './routes/songsRoutes.js';
+import routes from './routes/songsRoutes.mjs';
 
 /* -----------------------------------------------------------------------------
   Application
