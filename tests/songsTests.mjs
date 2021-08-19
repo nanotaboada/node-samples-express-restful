@@ -2,7 +2,7 @@
 
 import supertest from 'supertest';
 import { should } from 'chai';
-import app from '../app.js';
+import app from '../app.mjs';
 
 const request = supertest(app);
 should();

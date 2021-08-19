@@ -6,9 +6,9 @@
   "main": "server.js",
   "scripts": {
     "lint": "eslint .",
-    "start": "node server.js",
-    "debug": "nodemon --inspect server.js",
-    "test": "mocha 'tests/songsTests.js'"
+    "start": "node server.mjs",
+    "debug": "nodemon --inspect server.mjs",
+    "test": "mocha 'tests/songsTests.mjs'"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,9 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",

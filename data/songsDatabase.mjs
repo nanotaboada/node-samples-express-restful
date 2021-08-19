@@ -2,19 +2,16 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { Low, JSONFile } from 'lowdb';
 
-const filename = join(dirname(fileURLToPath(import.meta.url)), '../data/songs.json');
-const adapter = new JSONFile(filename);
-const db = new Low(adapter);
-db.read();
-
 /* -----------------------------------------------------------------------------
-  Service
+  Database
 ----------------------------------------------------------------------------- */
 
-const songsService = {
-  retrieveAll() {
-    return db.data;
-  },
-};
+async function connection() {
+  const filename = join(dirname(fileURLToPath(import.meta.url)), '../data/songs.json');
+  const adapter = new JSONFile(filename);
+  const low = new Low(adapter);
+  await low.read();
+  return low;
+}
 
-export default songsService;
+export default connection;
