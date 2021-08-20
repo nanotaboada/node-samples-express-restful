@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-
 import winston from 'winston';
 import app from './app.mjs';
 
@@ -10,7 +8,7 @@ import app from './app.mjs';
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
-  defaultMeta: { module: 'app.js' },
+  defaultMeta: { module: 'server.mjs' },
   transports: [
     new winston.transports.File({ filename: 'error.log', level: 'error' }),
     new winston.transports.File({ filename: 'combined.log' }),
@@ -22,6 +20,10 @@ if (process.env.NODE_ENV !== 'production') {
     format: winston.format.simple(),
   }));
 }
+
+/* -----------------------------------------------------------------------------
+  Server
+----------------------------------------------------------------------------- */
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
