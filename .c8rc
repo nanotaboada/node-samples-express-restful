@@ -1,0 +1,5 @@
+{
+  "all": true,
+  "exclude": ["coverage", "server.mjs"],
+  "reporter": ["lcov", "text-summary"]
+}
