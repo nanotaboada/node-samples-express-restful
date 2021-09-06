@@ -12,7 +12,7 @@ describe('HTTP GET', () => {
     });
   });
   describe('/api/v1/songs/year/:year', () => {
-    it('When request parameter is unknown year, then response status code should be 400 (Bad Request)', async () => {
+    it('When request parameter is invalid year, then response status code should be 400 (Bad Request)', async () => {
       const response = await request.get('/api/v1/songs/year/1776');
       expect(response.statusCode).to.equal(400);
     });
@@ -28,9 +28,17 @@ describe('HTTP GET', () => {
     });
   });
   describe('/api/v1/songs/rank/:rank', () => {
-    it('When request parameter is unknown rank, then response status code should be 400 (Bad Request)', async () => {
+    it('When request parameter is invalid rank, then response status code should be 400 (Bad Request)', async () => {
       const response = await request.get('/api/v1/songs/rank/501');
       expect(response.statusCode).to.equal(400);
+    });
+    it('When request parameter is valid rank, then response status code should be 200 (OK)', async () => {
+      const response = await request.get('/api/v1/songs/rank/42');
+      expect(response.statusCode).to.equal(200);
+    });
+    it('When request parameter is valid rank, then response body should contain the song matching that rank', async () => {
+      const response = await request.get('/api/v1/songs/rank/42');
+      expect(response.body).to.have.property('rank', 42);
     });
   });
 });

@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "start": "node server.mjs",
     "debug": "nodemon --inspect server.mjs",
-    "test": "mocha 'tests/songsTests.mjs'"
+    "test": "mocha ./tests/songsTests.mjs",
+    "coverage": "c8 npm run test"
   },
   "repository": {
     "type": "git",
@@ -29,12 +30,14 @@
     "@babel/core": "^7.15.4",
     "@babel/eslint-parser": "^7.15.4",
     "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "c8": "^7.8.0",
     "chai": "^4.3.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
     "mocha": "^9.1.1",
     "nodemon": "^2.0.12",
+    "nyc": "^15.1.0",
     "supertest": "^6.1.6"
   },
   "nodemonConfig": {
