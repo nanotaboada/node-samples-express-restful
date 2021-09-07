@@ -17,7 +17,7 @@ const songsController = {
     if (songsByYear) {
       response.status(200).json(songsByYear).end();
     } else {
-      response.status(400).end();
+      response.status(404).end();
     }
   },
 
@@ -27,7 +27,7 @@ const songsController = {
     if (songByRank) {
       response.status(200).json(songByRank).end();
     } else {
-      response.status(400).end();
+      response.status(404).end();
     }
   },
 };
