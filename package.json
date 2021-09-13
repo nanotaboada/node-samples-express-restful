@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "node server.mjs",
     "debug": "nodemon --inspect server.mjs",
-    "test": "mocha ./tests/songsTests.mjs",
+    "test": "mocha ./tests/*Tests.mjs",
     "coverage": "c8 npm run test"
   },
   "repository": {
