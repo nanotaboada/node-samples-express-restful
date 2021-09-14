@@ -15,7 +15,7 @@ const songsController = {
     const year = parseInt(request.params.id, 10);
     const { min, max } = service.getRangeOfYears();
     if (year >= min && year <= max) {
-      const songsByYear = service.filterSongsByYear(year.toString());
+      const songsByYear = service.filterSongsByYear(year);
       if (songsByYear) {
         response.status(200).json(songsByYear).end();
       } else {

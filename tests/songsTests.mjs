@@ -21,7 +21,7 @@ describe('Integration Tests', () => {
         const response = await request.get('/api/v1/songs/year/2021');
         expect(response.statusCode).to.equal(422);
       });
-      it('When request parameter is within range of existing years but does not match any song, then response status code should be 400 (Not Found)', async () => {
+      it('When request parameter is within range of existing years but does not match any song, then response status code should be 404 (Not Found)', async () => {
         const response = await request.get('/api/v1/songs/year/1999'); // Verified against collection that there are no songs from 1999
         expect(response.statusCode).to.equal(404);
       });
@@ -32,7 +32,7 @@ describe('Integration Tests', () => {
       it('When request parameter is within range of existing years and matches songs, then response body should contain songs from that year', async () => {
         const response = await request.get('/api/v1/songs/year/1977');
         response.body.forEach((song) => {
-          expect(song).to.have.property('year', '1977');
+          expect(song).to.have.property('year', 1977);
         });
       });
     });
