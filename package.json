@@ -23,7 +23,7 @@
   "homepage": "https://github.com/nanotaboada/node-samples-express-restful#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "lowdb": "^2.1.0",
+    "lowdb": "^3.0.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
