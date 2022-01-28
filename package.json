@@ -24,7 +24,7 @@
   "dependencies": {
     "express": "^4.17.2",
     "lowdb": "^3.0.0",
-    "winston": "^3.3.3"
+    "winston": "^3.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
