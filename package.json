@@ -22,23 +22,23 @@
   },
   "homepage": "https://github.com/nanotaboada/node-samples-express-restful#readme",
   "dependencies": {
-    "express": "^4.17.3",
+    "express": "^4.18.2",
     "lowdb": "^3.0.0",
-    "winston": "^3.7.2"
+    "winston": "^3.11.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/eslint-parser": "^7.17.0",
+    "@babel/core": "^7.23.0",
+    "@babel/eslint-parser": "^7.22.15",
     "@babel/plugin-syntax-top-level-await": "^7.14.5",
-    "c8": "^7.11.2",
-    "chai": "^4.3.6",
-    "eslint": "^8.14.0",
+    "c8": "^7.14.0",
+    "chai": "^4.3.10",
+    "eslint": "^8.51.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.28.1",
     "mocha": "^9.2.2",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.22",
     "nyc": "^15.1.0",
-    "supertest": "^6.2.2"
+    "supertest": "^6.3.3"
   },
   "nodemonConfig": {
     "restartable": "rs",
