@@ -1,4 +1,4 @@
-# Sample REST API with Node.js and Express 4
+# Sample RESTful API with Node.js and Express.js
 
 ## Status
 
@@ -6,7 +6,6 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/nanotaboada/node-samples-express-restful/badge)](https://www.codefactor.io/repository/github/nanotaboada/node-samples-express-restful)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/84e500621bf045169f68268c2b18bdec)](https://app.codacy.com/gh/nanotaboada/node-samples-express-restful/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![codecov](https://codecov.io/gh/nanotaboada/node-samples-express-restful/branch/master/graph/badge.svg?token=OQLWNTL1PE)](https://codecov.io/gh/nanotaboada/node-samples-express-restful)
-[![Known Vulnerabilities](https://snyk.io/test/github/nanotaboada/node-samples-express-restful/badge.svg)](https://snyk.io/test/github/nanotaboada/node-samples-express-restful)
 
 ## Manifesto
 
@@ -14,7 +13,20 @@
 
 ## About
 
-Proof of Concept for a REST API made with [Node.js](https://nodejs.org/) and [Express 4](https://expressjs.com/)
+Proof of Concept for a RESTful API made with [Node.js](https://nodejs.org/) 20.x LTS and [Express.js](https://expressjs.com/) 4
+
+## Install
+
+```shell
+npm install
+```
+
+## Start
+
+```shell
+npm start
+```
+
 
 ## Credits
 
