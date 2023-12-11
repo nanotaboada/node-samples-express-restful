@@ -27,6 +27,12 @@ npm install
 npm start
 ```
 
+## Debug
+
+```shell
+nodemon server.mjs
+```
+
 
 ## Credits
 

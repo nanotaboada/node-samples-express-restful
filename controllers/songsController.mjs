@@ -7,15 +7,15 @@ import service from '../services/songsService.mjs';
 const songsController = {
 
   getSongs(request, response) {
-    const songs = service.retrieveAllSongs();
+    const songs = service.retrieve();
     response.status(200).json(songs).end();
   },
 
   getSongsByYear(request, response) {
     const year = parseInt(request.params.id, 10);
-    const { min, max } = service.getRangeOfYears();
+    const { min, max } = service.retrieveRangeOfYears();
     if (year >= min && year <= max) {
-      const songsByYear = service.filterSongsByYear(year);
+      const songsByYear = service.retrieveByYear(year);
       if (songsByYear) {
         response.status(200).json(songsByYear).end();
       } else {
@@ -28,9 +28,9 @@ const songsController = {
 
   getSongByRank(request, response) {
     const rank = parseInt(request.params.id, 10);
-    const { min, max } = service.getRangeOfRanks();
+    const { min, max } = service.retrieveRangeOfRanks();
     if (rank >= min && rank <= max) {
-      const songByRank = service.findSongByRank(rank);
+      const songByRank = service.retrieveByRank(rank);
       if (songByRank) {
         response.status(200).json(songByRank).end();
       }
