@@ -6,9 +6,12 @@ import app from '../app.mjs';
 
 const request = supertest(app);
 
+// Passing arrow functions (aka “lambdas”) to Mocha is discouraged.
+// https://mochajs.org/#arrow-functions
+
 describe('Integration Tests', function () {
   describe('HTTP GET', function () {
-    describe('/api/v1/songs', () => {
+    describe('/api/v1/songs', function () {
       it('When request has no parameters, then response status code should be 200 (OK)', async function () {
         const response = await request.get('/api/v1/songs');
         expect(response.statusCode).to.equal(200);
@@ -18,7 +21,7 @@ describe('Integration Tests', function () {
         expect(response.statusCode).to.equal(404);
       });
     });
-    describe('/api/v1/songs/year/:year', () => {
+    describe('/api/v1/songs/year/:year', function () {
       it('When request parameter is out of range of existing years, then response status code should be 422 (Unprocessable Entity)', async function () {
         const response = await request.get('/api/v1/songs/year/2021');
         expect(response.statusCode).to.equal(422);
@@ -38,7 +41,7 @@ describe('Integration Tests', function () {
         });
       });
     });
-    describe('/api/v1/songs/rank/:rank', () => {
+    describe('/api/v1/songs/rank/:rank', function () {
       it('When request parameter is out of range of existing ranks, then response status code should be 422 (Unprocessable Entity)', async function () {
         const response = await request.get('/api/v1/songs/rank/555');
         expect(response.statusCode).to.equal(422);
