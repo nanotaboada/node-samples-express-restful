@@ -1,16 +1,16 @@
+/* ------------------------------------------------------------------------------------------------
+  Database
+------------------------------------------------------------------------------------------------ */
+
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import Database from 'better-sqlite3';
-
-/* -----------------------------------------------------------------------------
-  Database
------------------------------------------------------------------------------ */
 
 const filename = join(dirname(fileURLToPath(import.meta.url)), '../data/songs-sqlite3.db');
 const db = new Database(filename, { fileMustExist: true });
 db.pragma('journal_mode = WAL');
 
-const songsDatabase = {
+const songDatabase = {
   // https://github.com/WiseLibs/better-sqlite3/blob/master/docs/api.md#allbindparameters---array-of-rows
   selectAll() {
     return db.prepare('SELECT * FROM songs').all();
@@ -30,4 +30,4 @@ const songsDatabase = {
   },
 };
 
-export default songsDatabase;
+export default songDatabase;

@@ -1,21 +1,19 @@
-import service from '../services/songsService.mjs';
-
-/* -----------------------------------------------------------------------------
+/* ------------------------------------------------------------------------------------------------
   Controller
------------------------------------------------------------------------------ */
+------------------------------------------------------------------------------------------------ */
 
-const songsController = {
+import songService from '../services/songService.mjs';
 
+const songController = {
   getSongs(request, response) {
-    const songs = service.retrieve();
+    const songs = songService.retrieve();
     response.status(200).json(songs).end();
   },
-
   getSongsByYear(request, response) {
     const year = parseInt(request.params.id, 10);
-    const { min, max } = service.retrieveRangeOfYears();
+    const { min, max } = songService.retrieveRangeOfYears();
     if (year >= min && year <= max) {
-      const songsByYear = service.retrieveByYear(year);
+      const songsByYear = songService.retrieveByYear(year);
       if (songsByYear) {
         response.status(200).json(songsByYear).end();
       } else {
@@ -25,12 +23,11 @@ const songsController = {
       response.status(422).end();
     }
   },
-
   getSongByRank(request, response) {
     const rank = parseInt(request.params.id, 10);
-    const { min, max } = service.retrieveRangeOfRanks();
+    const { min, max } = songService.retrieveRangeOfRanks();
     if (rank >= min && rank <= max) {
-      const songByRank = service.retrieveByRank(rank);
+      const songByRank = songService.retrieveByRank(rank);
       if (songByRank) {
         response.status(200).json(songByRank).end();
       }
@@ -40,4 +37,4 @@ const songsController = {
   },
 };
 
-export default songsController;
+export default songController;
