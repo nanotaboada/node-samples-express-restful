@@ -23,7 +23,7 @@
   "homepage": "https://github.com/nanotaboada/node-samples-express-restful#readme",
   "dependencies": {
     "better-sqlite3": "^9.4.3",
-    "express": "^4.18.2",
+    "express": "^4.18.3",
     "winston": "^3.11.0"
   },
   "devDependencies": {
