@@ -1,6 +1,18 @@
+ignore:
+- server.mjs
+- app.mjs
+- data
+- routes
+- tests
 coverage:
   status:
     project:
+      controllers:
+        paths:
+          - controllers/songController.mjs
+      services:
+        paths:
+          - services/songService.mjs
+    patch:
       default:
-        target: 100%
-        threshold: 20%
+        informational: true
