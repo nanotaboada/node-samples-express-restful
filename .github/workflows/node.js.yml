@@ -1,5 +1,5 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# Building and testing Node.js
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Node.js CI
 
@@ -17,19 +17,24 @@ jobs:
         node-version: [18.x, 20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
+
     - name: Checkout repository
       uses: actions/checkout@v4
-    - name: Setup Node.js ${{ matrix.node-version }}
+
+    - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Install project with a clean slate
+        cache-dependency-path: package-lock.json
+
+    - name: Clean install project dependencies
       run: npm ci
-    - name: Run tests and generate coverage report
+
+    - name: Run tests with Mocha and collect coverage with c8
       run: npm run coverage --if-present
+
     - name: Upload coverage report to Codecov
       uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-
