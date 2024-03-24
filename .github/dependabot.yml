@@ -6,6 +6,13 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      babel:
+        patterns:
+        - "@babel*"
+      eslint:
+        patterns:
+        - "eslint*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
