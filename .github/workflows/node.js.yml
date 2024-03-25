@@ -10,12 +10,12 @@ on:
     branches: [ master ]
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        node-version: [20.x]
     steps:
 
     - name: Checkout repository
@@ -34,7 +34,47 @@ jobs:
     - name: Run tests with Mocha and collect coverage with c8
       run: npm run coverage --if-present
 
+    - name: Upload native V8 code-coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: lcov.info
+        path: ./coverage/lcov.info
+
+  coverage-codecov:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download native V8 code-coverage report
+      uses: actions/download-artifact@v4
+      with:
+        name: lcov.info
+
     - name: Upload coverage report to Codecov
       uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        files: lcov.info
+
+  coverage-codacy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download native V8 code-coverage report
+      uses: actions/download-artifact@v4
+      with:
+        name: lcov.info
+
+    - name: Upload coverage report to Codacy
+      uses: codacy/codacy-coverage-reporter-action@v1
+      with:
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        coverage-reports: lcov.info
+        language: Javascript
