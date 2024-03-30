@@ -16,7 +16,7 @@ describe('Integration Tests', function () {
         const response = await request.get('/api/v1/songs');
         expect(response.statusCode).to.equal(200);
       });
-      it('When request has unexpected parameter, then response status code should be 404 (Bad Request)', async function () {
+      it('When request has unexpected parameter, then response status code should be 404 (Not Found)', async function () {
         const response = await request.get('/api/v1/songs/foobar');
         expect(response.statusCode).to.equal(404);
       });
