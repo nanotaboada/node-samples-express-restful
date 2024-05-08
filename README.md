@@ -2,10 +2,7 @@
 
 ## Status
 
-[![Node.js CI](https://github.com/nanotaboada/node-samples-express-restful/actions/workflows/node.js.yml/badge.svg)](https://github.com/nanotaboada/node-samples-express-restful/actions/workflows/node.js.yml)
-[![CodeFactor](https://www.codefactor.io/repository/github/nanotaboada/node-samples-express-restful/badge)](https://www.codefactor.io/repository/github/nanotaboada/node-samples-express-restful)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/84e500621bf045169f68268c2b18bdec)](https://app.codacy.com/gh/nanotaboada/node-samples-express-restful/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![codecov](https://codecov.io/gh/nanotaboada/node-samples-express-restful/branch/master/graph/badge.svg?token=OQLWNTL1PE)](https://codecov.io/gh/nanotaboada/node-samples-express-restful)
+![Public Archive](https://img.shields.io/badge/status-public%20archive-FFF8C4)
 
 ## Manifesto
 
